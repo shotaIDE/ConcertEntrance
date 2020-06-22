@@ -5,6 +5,7 @@ import * as firebase from 'firebase/app';
 import React, { useEffect, useState } from 'react';
 
 import ConcertCard, { ConcertDetail } from './ConcertCard';
+import Header from './Header';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBf5eH4cl8Dk1pZR9R4yoWbXED9sVUlVGE",
@@ -30,6 +31,7 @@ interface Props {}
 
 const App = (_: Props) => {
   const [data, setData] = useState(new Array<ConcertDetail>());
+  const [datetime, setDatetime] = useState(new Date(1990, 1, 1));
 
   useEffect(() => {
     datastore
@@ -60,10 +62,27 @@ const App = (_: Props) => {
 
         setData(fixedData);
       });
+
+    datastore
+      .collection("update_info")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((document) => {
+          if (document.id !== "bravo") {
+            return;
+          }
+
+          const rawData = document.data();
+          const timestamp = rawData.datetime.seconds;
+          const updateDatetime = new Date(timestamp * 1000);
+          setDatetime(updateDatetime);
+        });
+      });
   }, []);
 
   return (
     <div className="App">
+      <Header update={datetime} />
       {data.map((concert, index) => {
         return <ConcertCard key={`${index}`} detail={concert} />;
       })}
