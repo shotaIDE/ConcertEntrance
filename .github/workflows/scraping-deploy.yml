@@ -1,0 +1,23 @@
+name: Scraping deploy
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'scraping/**'
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - run: cd scraping/
+
+      - uses: actions-hub/gcloud@master
+        env:
+          PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
+          APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        with:
+          args: app deploy app.yaml
