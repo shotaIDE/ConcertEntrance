@@ -60,7 +60,7 @@ const App = (_: Props) => {
 
         setData(fixedData);
       });
-  });
+  }, []);
 
   return (
     <div className="App">
