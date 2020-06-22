@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Header = (props: Props) => {
-  return <Typography>最終更新日時：{props.update.toLocaleString()}</Typography>;
+  return <Typography>Last updated: {props.update.toLocaleString()}</Typography>;
 };
 
 export default Header;
