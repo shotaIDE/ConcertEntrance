@@ -204,7 +204,9 @@ def main():
         if IS_DEBUG:
             break
 
-    register_concerts(list=concert_details_raw)
+    current_datetime = datetime.now(tz=JST)
+
+    register_concerts(list=concert_details_raw, datetime=current_datetime)
 
     print('Completed to fetch data')
 
