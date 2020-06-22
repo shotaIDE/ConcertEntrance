@@ -1,6 +1,7 @@
 # Concert Entrance
 
 ![Front deploy](https://github.com/shotaIDE/ConcertEntrance/workflows/Front%20deploy/badge.svg)
+![Scraping deploy](https://github.com/shotaIDE/ConcertEntrance/workflows/Scraping%20deploy/badge.svg)
 
 クラシックのコンサート情報を、演奏曲目に着目しながらザッピングして吟味するための Web アプリです。
 
