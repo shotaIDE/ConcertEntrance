@@ -1,3 +1,13 @@
+# Firestore
+*.log
+
+# Scraping
+__pycache__/
+
+/env
+/serviceAccountKey.json
+
+# Front
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
