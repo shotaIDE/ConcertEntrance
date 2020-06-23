@@ -130,7 +130,7 @@ def main():
                 'url': url
             })
 
-            print(f'List item: {title}, {url}')
+            print(f'Found concert item: {title}, {url}')
 
         next_elem = soup.find('a', {'rel': 'next'})
         if next_elem is None:
