@@ -62,7 +62,7 @@ yarn start
 以下コマンドによりデプロイします。
 
 ```shell
-gcloud app deploy app.yml
+gcloud app deploy app.yaml
 ```
 
 cron タスクを変更した場合は、以下コマンドにより cron 設定をデプロイします。
