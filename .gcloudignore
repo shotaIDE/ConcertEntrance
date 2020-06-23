@@ -18,6 +18,8 @@ __pycache__/
 # Ignored by the build system
 /setup.cfg
 
-/.vscode
-/env
-/mock
+/*
+!/scraping
+!/requirements.txt
+!/requirements-test.txt
+!/serviceAccountKey.json

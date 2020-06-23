@@ -4,6 +4,8 @@ on:
     branches: [ master ]
     paths:
       - 'scraping/**'
+      - 'requirements.txt'
+      - 'requirements-test.txt'
 
 jobs:
   deploy:
@@ -18,4 +20,4 @@ jobs:
           PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
           APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         with:
-          args: app deploy scraping/app.yaml
+          args: app deploy app.yml
