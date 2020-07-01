@@ -18,7 +18,7 @@ jobs:
       - name: Generate Firestore credential file
         env:
           FIRESTORE_CREDENTIALS: ${{ secrets.FIRESTORE_CREDENTIALS }}
-        run: echo $FIRESTORE_CREDENTIALS | base64 -D > serviceAccountKey.json
+        run: echo $FIRESTORE_CREDENTIALS | base64 --decode > serviceAccountKey.json
 
       - uses: actions-hub/gcloud@master
         env:
