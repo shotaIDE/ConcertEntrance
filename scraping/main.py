@@ -110,7 +110,7 @@ def main():
 
     while True:
         fetch_url = f'{BRAVO_ORIGIN}{fetch_path}'
-        print(f'Fetch URL: {fetch_url}')
+        print(f'Fetching list from {fetch_url}')
 
         if IS_DEBUG:
             fetched_text = get_mock_list()
@@ -145,7 +145,7 @@ def main():
         src_path = summary['url']
         src_url = f'{BRAVO_ORIGIN}{src_path}'
 
-        print(f'Fetch URL: {src_url}')
+        print(f'Fetching details from {src_url}')
 
         if IS_DEBUG:
             fetched_text = get_mock_details()
@@ -204,11 +204,11 @@ def main():
         if IS_DEBUG:
             break
 
+    print('Completed to fetch data')
+
     current_datetime = datetime.now(tz=JST)
 
     register_concerts(list=concert_details_raw, datetime=current_datetime)
-
-    print('Completed to fetch data')
 
 
 if __name__ == '__main__':
