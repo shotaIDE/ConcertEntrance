@@ -18,7 +18,7 @@ def register_concerts(list: list, datetime: datetime):
 
     for concert_detail in list:
         cencert_list_collection.add(concert_detail)
-        print(f'Added {concert_detail}')
+        print(f'Added details: {concert_detail}')
 
     bravo_update_collection = db.collection('update_info').document('bravo')
 
@@ -28,4 +28,4 @@ def register_concerts(list: list, datetime: datetime):
     bravo_update_collection.set(update_info)
 
     formatted_datetime = datetime.strftime('%Y/%m/%d %H:%M:%S')
-    print(f'Update info: {formatted_datetime}')
+    print(f'Added timestamp: {formatted_datetime}')
