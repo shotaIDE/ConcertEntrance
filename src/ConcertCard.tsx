@@ -1,56 +1,17 @@
 import clsx from 'clsx';
 import React, { useState } from 'react';
 
-import { Theme } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Collapse from '@material-ui/core/Collapse';
-import lightGreen from '@material-ui/core/colors/lightGreen';
 import IconButton from '@material-ui/core/IconButton';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import OpenInBrowser from '@material-ui/icons/OpenInBrowser';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    card: {
-      maxWidth: 860,
-      margin: "auto",
-      marginTop: 10,
-      marginBottom: 10,
-      textAlign: "left",
-    },
-    content: {
-      paddingTop: 0,
-      paddingBottom: 0,
-      marginTop: 0,
-      marginBottom: 0,
-    },
-    actions: {
-      display: "flex",
-      paddingTop: 0,
-      marginTop: 0,
-    },
-    expand: {
-      transform: "rotate(0deg)",
-      transition: theme.transitions.create("transform", {
-        duration: theme.transitions.duration.shortest,
-      }),
-    },
-    expandOpen: {
-      transform: "rotate(180deg)",
-    },
-    avatar: {
-      backgroundColor: lightGreen[700],
-    },
-    lineWrap: {
-      margin: 0,
-    },
-  })
-);
+import useStyles from './ConcertCardStyle';
 
 export interface ConcertDetail {
   title: string;

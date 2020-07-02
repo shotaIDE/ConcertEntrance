@@ -5,6 +5,7 @@ import * as firebase from 'firebase/app';
 import React, { useEffect, useState } from 'react';
 
 import ConcertCard, { ConcertDetail } from './ConcertCard';
+import ConcertCardSkeleton from './ConcertCardSkeleton';
 import Header from './Header';
 
 const firebaseConfig = {
@@ -80,12 +81,19 @@ const App = (_: Props) => {
       });
   }, []);
 
+  const content =
+    data.length === 0 ? (
+      <ConcertCardSkeleton />
+    ) : (
+      data.map((concert, index) => {
+        return <ConcertCard key={`${index}`} detail={concert} />;
+      })
+    );
+
   return (
     <div className="App">
       <Header update={datetime} />
-      {data.map((concert, index) => {
-        return <ConcertCard key={`${index}`} detail={concert} />;
-      })}
+      {content}
     </div>
   );
 };
