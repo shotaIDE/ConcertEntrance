@@ -5,6 +5,8 @@
 
 クラシックのコンサート情報を、演奏曲目に着目しながらザッピングして吟味するための Web アプリです。
 
+https://concertentrance.web.app/
+
 ## 利用技術
 
 ![利用技術](https://github.com/shotaIDE/ConcertEntrance/blob/master/docs/architecture.png)
